@@ -234,7 +234,7 @@ fi
 
 if [ "$OCTOPI_INCLUDE_HAPROXY" == "yes" ]
 then
-  systemctl_if_exists enable gencert.service
+  systemctl_if_exists enable gencert.service # -- RG -- GenCert Service
 
   haproxy_version=$(dpkg -s haproxy | grep '^Version:' | awk '{print $2}')
   if [[ $haproxy_version = 2.* ]]; then
